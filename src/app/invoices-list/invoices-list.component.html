@@ -1,0 +1,210 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Faturas</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="'/index'">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Faturas</li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <a [routerLink]="'/invoices-list'" class="invoices-links active">
+                        <i data-feather="list"></i>
+                    </a>
+                    <a [routerLink]="'/invoice-grid'" class="invoices-links">
+                        <i data-feather="grid"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+
+        <div class="card invoices-tabs-card">
+            <div class="card-body card-body pt-0 pb-0">
+                <div class="invoices-main-tabs">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="invoices-tabs">
+                                <ul>
+                                    <li><a [routerLink]="'/invoices-list'" class="active">Todas as faturas</a></li>
+                                    <li><a [routerLink]="'/invoices-paid'">Pagas</a></li>	
+                                    <li><a [routerLink]="'/invoices-overdue'">Vencidas</a></li>	
+                                    <li><a [routerLink]="'/invoices-cancelled'">Canceladas</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <!--<div class="invoices-settings-btn">
+                                <a [routerLink]="'/invoices-settings'" class="invoices-settings-icon">
+                                    <i data-feather="settings"></i>
+                                </a>
+                                <a [routerLink]="'/add-invoice'" class="btn">
+                                    <i data-feather="plus-circle"></i> New Invoice
+                                </a>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/icons/invoices-icon1.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">R$8.780,79</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Todas <span>150</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/icons/invoices-icon2.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">R$4.588,40</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Pagas <span>60</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/icons/invoices-icon3.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">R$2.005,54</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Em aberto <span>70</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/icons/invoices-icon4.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">R$8.800,00</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Canceladas <span>80</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table"> 
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-stripped table-hover datatable">
+                                <thead class="thead-light">
+                                    <tr>
+                                       <th>Fatura ID</th>
+                                       <th>Emissão</th>
+                                       <th>Valor</th>
+                                       <th>Vencimento</th>
+                                       <th>Status</th>
+                                       <th class="text-end">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <label class="custom_check">
+                                                <input type="checkbox" name="invoice">
+                                                <span class="checkmark"></span> 
+                                            </label>
+                                            <a [routerLink]="'/view-invoice'" class="invoice-link">KX093439#@09</a>
+                                        </td>
+                                        <td>16 Mar 2022</td>
+                                        <td class="text-primary">R$130,00</td>
+                                        <td>23 Mar 2022</td>
+                                        <td><span class="badge bg-success-light">Pago</span></td>
+                                        <td class="text-end">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" [routerLink]="'/view-invoice'"><i class="far fa-eye me-2"></i>Ver</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="custom_check">
+                                                <input type="checkbox" name="invoice">
+                                                <span class="checkmark"></span> 
+                                            </label>
+                                            <a [routerLink]="'/view-invoice'" class="invoice-link">KX093132#@05</a>
+                                        </td>
+                                        <td>16 Mar 2022</td>
+                                        <td class="text-primary">R$130,00</td>
+                                        <td>23 Abr 2022</td>
+                                        <td><span class="badge bg-danger-light">Vencida</span></td>
+                                        <td class="text-end">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" [routerLink]="'/view-invoice'"><i class="far fa-eye me-2"></i>Ver</a>
+													<a class="dropdown-item" href="javascript:void(0);"><i class="far fa-check-circle me-2"></i>Pagar</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="custom_check">
+                                                <input type="checkbox" name="invoice">
+                                                <span class="checkmark"></span> 
+                                            </label>
+                                            <a [routerLink]="'/view-invoice'" class="invoice-link">KX093413#@07</a>
+                                        </td>
+                                        <td>16 Mar 2022</td>
+                                        <td class="text-primary">R$130,00</td>
+                                        <td>23 Ago 2022</td>
+                                        <td><span class="badge bg-warning-light">Em aberto</span></td>
+                                        <td class="text-end">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" [routerLink]="'/view-invoice'"><i class="far fa-eye me-2"></i>Ver</a>
+													<a class="dropdown-item" href="javascript:void(0);"><i class="far fa-check-circle me-2"></i>Pagar</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Wrapper -->

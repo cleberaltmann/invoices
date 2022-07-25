@@ -1,0 +1,71 @@
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Notas fiscais</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="'/'">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Notas fiscais</li>
+                    </ul>
+                </div>
+                <div class="col-auto">
+                    <a [routerLink]="'/add-payment'" class="btn btn-primary me-2">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                    <a class="btn btn-primary filter-btn" href="javascript:void(0);" id="filter_search">
+                        <i class="fas fa-filter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-center table-hover datatable">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th>Número</th>
+                                        <th>Empresa</th>
+                                        <th>Valor</th>
+                                        <th>Emissão</th>
+                                        <th class="text-end">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let payment of payments; let i=index">
+                                        <td><a href="javascript:void(0);">{{payment.ref_id}}</a></td>
+                                        <td>
+                                            <h2 class="table-avatar">
+                                                <a [routerLink]="'/profile'"><img class="avatar avatar-sm me-2 avatar-img rounded-circle" src="assets/img/profiles/avatar-{{ i + 1 }}.jpg" alt="User Image"> {{payment.customer_name}}</a>
+                                            </h2>
+                                        </td>
+                                        <td>{{payment.amount}}</td>
+                                        <td>{{payment.date | date : 'dd MMM yyyy'}}</td>
+                                        <td class="text-end">
+                                            <a class="btn btn-sm btn-white me-2" href="javascript:void(0);">
+                                                <i class="fas fa-download me-1"></i> PDF
+                                            </a>
+                                            <a class="btn btn-sm btn-white" [routerLink]="'/view-invoice'">
+                                                <i class="far fa-eye me-1"></i> Ver
+                                            </a>
+                                        </td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Wrapper -->
